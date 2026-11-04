@@ -19,18 +19,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: Install node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
-       node-version: '20.x'
+       node-version: '26.x'
     - name: Install Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v7
       with:
-        python-version: '3.11'
+        python-version: '3.14'
         architecture: 'x64'
     - name: Install dependencies
-      run: python -m pip install -U "jupyterlab>=4.0.0,<5"
+      run: python -m pip install -U "jupyterlab>=4.6.5,<5"
     - name: Lint the extension
       run: |
         set -eux
@@ -52,7 +52,7 @@ jobs:
         pip uninstall -y "jupyterlab-execute-time" jupyterlab
 
     - name: Upload extension packages
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: extension-artifacts
         path: dist/jupyterlab_execute_time*
@@ -63,13 +63,13 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: Install Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v7
       with:
-        python-version: '3.9'
+        python-version: '3.14'
         architecture: 'x64'
-    - uses: actions/download-artifact@v4
+    - uses: actions/download-artifact@v8
       with:
         name: extension-artifacts
     - name: Install and Test
@@ -79,7 +79,7 @@ jobs:
         sudo rm -rf $(which node)
         sudo rm -rf $(which node)
 
-        pip install "jupyterlab>=4.0.0,<5" jupyterlab_execute_time*.whl
+        pip install "jupyterlab>=4.6.5,<5" jupyterlab_execute_time*.whl
 
         jupyter labextension list
         jupyter labextension list 2>&1 | grep -ie "jupyterlab-execute-time.*OK"
@@ -95,28 +95,28 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: Install node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
-       node-version: '20.x'
+       node-version: '26.x'
 
     - name: Install Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v7
       with:
-        python-version: '3.11'
+        python-version: '3.14'
         architecture: 'x64'
 
     - name: Download extension package
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         name: extension-artifacts
 
     - name: Install the extension
       run: |
         set -eux
-        python -m pip install "jupyterlab>=4.1.0,<5" jupyterlab_execute_time*.whl
+        python -m pip install "jupyterlab>=4.6.5,<5" jupyterlab_execute_time*.whl
 
     - name: Install dependencies
       working-directory: ui-tests
@@ -126,7 +126,7 @@ jobs:
       run: jlpm install
 
     - name: Set up browser cache
-      uses: actions/cache@v4
+      uses: actions/cache@v6
       with:
         path: |
           ${{ github.workspace }}/pw-browsers
@@ -143,7 +143,7 @@ jobs:
 
     - name: Upload Playwright Test report
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: jupyterlab_execute_time-playwright-tests
         path: |
@@ -162,7 +162,7 @@ jobs:
       id-token: write
     steps:
       - name: Retrieve extension artifacts
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: extension-artifacts
           path: artifacts/

@@ -13,7 +13,7 @@ export interface IFormatValidationResult {
  * @returns {IFormatValidationResult} Returns validation result.
  */
 export const validateDateFormat = (
-  dateFormat: string
+  dateFormat: string,
 ): IFormatValidationResult => {
   const testDate = new Date();
   try {
@@ -31,7 +31,7 @@ export const validateDateFormat = (
 
 export const getTimeString = (
   date: Date,
-  dateFormat = 'yyy-MM-dd HH:mm:ss'
+  dateFormat = 'yyy-MM-dd HH:mm:ss',
 ): string => {
   return format(date, dateFormat);
 };

@@ -10,7 +10,7 @@
 
 ### Maintenance
 
-- Update the snapshots to fix integration tests CI  [#135](https://github.com/deshaw/jupyterlab-execute-time/pull/135)
+- Update the snapshots to fix integration tests CI [#135](https://github.com/deshaw/jupyterlab-execute-time/pull/135)
 - Use hatch-jupyter-builder [#132](https://github.com/deshaw/jupyterlab-execute-time/pull/132)
 
 ## [3.2.0](https://github.com/deshaw/jupyterlab-execute-time/compare/v3.1.2...v3.2.0) (2024-09-12)

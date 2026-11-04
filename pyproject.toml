@@ -1,7 +1,7 @@
 [build-system]
 requires = [
-    "hatchling",
-    "jupyterlab~=4.0.0",
+    "hatchling>=1.33.0",
+    "jupyterlab>=4.6.5,<5",
 ]
 build-backend = "hatchling.build"
 
@@ -9,7 +9,7 @@ build-backend = "hatchling.build"
 name = "jupyterlab-execute-time"
 description = "Display cell timings in Jupyter Lab"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.14"
 authors = [
     { name = "Marc Udoff" },
 ]
@@ -27,14 +27,10 @@ classifiers = [
     "License :: OSI Approved :: BSD License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
-    "jupyterlab>=4,<5",
+    "jupyterlab>=4.6.5,<5",
 ]
 version = "3.2.0"
 
@@ -58,7 +54,7 @@ exclude = [
 
 [tool.hatch.build.hooks.jupyter-builder]
 dependencies = [
-    "hatch-jupyter-builder>=0.9.1",
+    "hatch-jupyter-builder>=0.10.0",
 ]
 build-function = "hatch_jupyter_builder.npm_builder"
 ensured-targets = [
