@@ -1,4 +1,90 @@
-## [2.1.0](https://github.com/deshaw/jupyterlab-execute-time/compare/v2.0.5...v2.1.0) (2021-10-1)
+## [3.3.0](https://github.com/deshaw/jupyterlab-execute-time/compare/v3.2.0...v3.3.0) (unreleased)
+
+### Added
+
+- Add CSS variables for background colors [#126](https://github.com/deshaw/jupyterlab-execute-time/pull/126)
+
+### Fixed
+
+- Fix infinite timer in duplicating running cell [#138](https://github.com/deshaw/jupyterlab-execute-time/pull/138)
+
+### Maintenance
+
+- Update the snapshots to fix integration tests CI  [#135](https://github.com/deshaw/jupyterlab-execute-time/pull/135)
+- Use hatch-jupyter-builder [#132](https://github.com/deshaw/jupyterlab-execute-time/pull/132)
+
+## [3.2.0](https://github.com/deshaw/jupyterlab-execute-time/compare/v3.1.2...v3.2.0) (2024-09-12)
+
+### Added
+
+- Add an option to show the cell outputs per second [#116](https://github.com/deshaw/jupyterlab-execute-time/pull/116)
+
+### Fixed
+
+- Fix extension not showing up in the Settings Editor [#120](https://github.com/deshaw/jupyterlab-execute-time/pull/120)
+
+## [3.1.2](https://github.com/deshaw/jupyterlab-execute-time/compare/v3.1.0...v3.1.2) (2024-02-14)
+
+### Fixed
+
+- Fix fluctuation of execute time when re-executing a cell [#112](https://github.com/deshaw/jupyterlab-execute-time/pull/112)
+
+## [3.1.1](https://github.com/deshaw/jupyterlab-execute-time/compare/v3.1.0...v3.1.1) (2024-01-29)
+
+### Fixed
+
+- Fix execute time not showing up after moving a cell [#109](https://github.com/deshaw/jupyterlab-execute-time/pull/109)
+
+## [3.1.0](https://github.com/deshaw/jupyterlab-execute-time/compare/v3.0.1...v3.1.0) (2023-11-06)
+
+### Added
+
+- Make display of last execution date optional [#94](https://github.com/deshaw/jupyterlab-execute-time/pull/94)
+- Enable defining custom date format [#93](https://github.com/deshaw/jupyterlab-execute-time/pull/93)
+- Support execution failure timing information (in JupyterLab 4.1+) [#100](https://github.com/deshaw/jupyterlab-execute-time/pull/100)
+
+### Fixed
+
+- Font size of the execute time indicator [#103](https://github.com/deshaw/jupyterlab-execute-time/pull/103)
+- Fix node attachment issue with windowed notebook [#102](https://github.com/deshaw/jupyterlab-execute-time/pull/102)
+
+### Maintenance
+
+- Added UI/visual regression tests [#105](https://github.com/deshaw/jupyterlab-execute-time/pull/105)
+
+## [3.0.1](https://github.com/deshaw/jupyterlab-execute-time/compare/v3.0.0...v3.0.1) (2023-08-02)
+
+### Changed
+
+- Ensure this only installs with Jupyterlab@4
+
+## ~[3.0.0](https://github.com/deshaw/jupyterlab-execute-time/compare/v2.3.1...v3.0.0) (2023-05-19)~
+
+### Changed
+
+- **Breaking**: Ported to JupyterLab 4.x.
+
+## [2.3.1](https://github.com/deshaw/jupyterlab-execute-time/compare/v2.3.0...v2.3.1) (2022-12-28)
+
+### Fixed
+
+- Enable to use jupyter-server2.x.
+
+## [2.3.0](https://github.com/deshaw/jupyterlab-execute-time/compare/v2.2.0...v2.3.0) (2022-11-03)
+
+### Added
+
+- Live execution time relative to last runtime. [#72](https://github.com/deshaw/jupyterlab-execute-time/pull/72)
+- Recent history of cell run timing via tooltip. [#72](https://github.com/deshaw/jupyterlab-execute-time/pull/72)
+- Auto opt-in to recoding cell timing for all notebooks. [#73](https://github.com/deshaw/jupyterlab-execute-time/pull/73)
+
+## [2.2.0](https://github.com/deshaw/jupyterlab-execute-time/compare/v2.1.0...v2.2.0) (2022-03-04)
+
+### Added
+
+- Add a Text Contrast setting that allows users to select text color contrast.
+
+## [2.1.0](https://github.com/deshaw/jupyterlab-execute-time/compare/v2.0.5...v2.1.0) (2021-10-01)
 
 ### Added
 

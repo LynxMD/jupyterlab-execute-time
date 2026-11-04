@@ -9,8 +9,6 @@ Display cell timings in Jupyter Lab
 
 This is inspired by the notebook version [here](https://github.com/ipython-contrib/jupyter_contrib_nbextensions/blob/master/src/jupyter_contrib_nbextensions/nbextensions/execute_time).
 
-Note: for this to show anything, you need to enable cell timing in the notebook via Settings->Advanced Settings Editor->Notebook: `{"recordTiming": true}`. This is a notebook metadata setting and not a plugin setting. The plugin just displays this data.
-
 ## Requirements
 
 - JupyterLab >= 3.0
@@ -28,6 +26,8 @@ To install this package with [`conda`](https://docs.conda.io/en/latest/) run
 ```bash
 conda install -c conda-forge jupyterlab_execute_time
 ```
+
+Note: By default, if this extension is enabled, it will automatically change your settings to record timing in the notebook metadata when it is loaded. If this fails, you can do this manually via Settings->Advanced Settings Editor->Notebook: `{"recordTiming": true}`. This is a notebook metadata setting and not a plugin setting. The plugin just displays this data.
 
 ## Contributing
 
@@ -69,37 +69,11 @@ jupyter lab build --minimize=False
 
 #### Publishing
 
-Before starting, you'll need to have run: `pip install twine jupyter_packaging`
-
 1. Update the version in `package.json` and update the release date in `CHANGELOG.md`
-2. Commit the change in step 1, tag it, then push it
-
-```
-git commit -am <msg>
-git tag vX.Z.Y
-git push && git push --tags
-```
-
-3. Create the artifacts
-
-```
-rm -rf dist
-python setup.py sdist bdist_wheel
-```
-
-4. Test this against the test pypi. You can then install from here to test as well:
-
-```
-twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-# In a new venv
-pip install --index-url https://test.pypi.org/simple/ jupyterlab_execute_time
-```
-
-5. Upload this to pypi:
-
-```
-twine upload dist/*
-```
+2. Commit the change in step 1
+3. For test release, manually trigger the [`Build and publish to PyPI` workflow](https://github.com/deshaw/jupyterlab-execute-time/actions/workflows/build.yml) - you need to check the `Test release` checkbox
+4. Draft a new [GitHub release](https://github.com/deshaw/jupyterlab-execute-time/releases/new), creating an approriate version tag
+5. Publish the draft and verify that the `publish` job in the build workflow passed.
 
 ### Uninstall
 
@@ -121,7 +95,10 @@ This plugin was contributed back to the community by the [D. E. Shaw group](http
 
 This project is released under a [BSD-3-Clause license](https://github.com/deshaw/jupyterlab-execute-time/blob/master/LICENSE.txt).
 
-"Jupyter" is a trademark of the NumFOCUS foundation, of which Project Jupyter is a part.
+We love contributions! Before you can contribute, please sign and submit this [Contributor License Agreement (CLA)](https://www.deshaw.com/oss/cla).
+This CLA is in place to protect all users of this project.
+
+"Jupyter" is a trademark of the LF Charities, of which Project Jupyter is a part.
 
 [pypi-url]: https://pypi.org/project/jupyterlab-execute-time
 [pypi-image]: https://img.shields.io/pypi/v/jupyterlab-execute-time
