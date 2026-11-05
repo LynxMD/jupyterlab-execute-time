@@ -6,19 +6,19 @@
     "esModuleInterop": true,
     "incremental": true,
     "jsx": "react",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "node20",
+    "moduleResolution": "node16",
     "noEmitOnError": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "preserveWatchOutput": true,
     "resolveJsonModule": true,
     "outDir": "lib",
-    "rootDir": "src",
+    "rootDir": "..",
     "strict": true,
     "strictNullChecks": false,
-    "target": "es2017",
-    "types": []
+    "target": "es2020",
+    "types": ["mocha"]
   },
-  "include": ["*"]
+  "include": ["*", "../src/*"]
 }

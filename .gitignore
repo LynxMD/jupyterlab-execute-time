@@ -75,7 +75,6 @@ docs/_build/
 target/
 
 # pyenv
-.python-version
 
 # celery beat schedule file
 celerybeat-schedule
@@ -110,3 +109,8 @@ dmypy.json
 
 # OSX files
 .DS_Store
+
+# Berry
+.pnp.cjs
+.pnp.loader.mjs
+.yarn/
